@@ -26,11 +26,12 @@ class Home extends Component {
   }
 
   componentDidMount() {
-    this.props.getInfo()
+    if(!this.props.list.length)
+      this.props.getInfo()
   }
 
   static loadData(store) {
-    return store.dispatch(actions.getInfo)
+    return store.dispatch(actions.getInfo())
   }
 }
 
@@ -41,7 +42,7 @@ const mapStateToProps = state => ({
 
 const mapDispatchToProps = dispatch => ({
   getInfo() {
-    dispatch(actions.getInfo)
+    dispatch(actions.getInfo())
   }
 })
 
