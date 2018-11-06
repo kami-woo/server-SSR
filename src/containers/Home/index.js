@@ -1,5 +1,4 @@
 import React, { Component } from 'react'
-import Header from '../../components/header'
 import { connect } from 'react-redux'
 import { actions } from './store'
 
@@ -12,7 +11,6 @@ class Home extends Component {
   render() {
     return (
       <div>
-        <Header />
         <div>This is {this.props.name}</div>
         <button onClick={() => {alert(1)}}>Click</button>
         { this.getList() }

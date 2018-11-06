@@ -4,8 +4,8 @@ import thunk from 'redux-thunk'
 import serverAxios from '../server/request'
 import clientAxios from '../client/request'
 
-export const getStore = () => {
-  return createStore(reducer, applyMiddleware(thunk.withExtraArgument(serverAxios)))
+export const getStore = (req) => {
+  return createStore(reducer, applyMiddleware(thunk.withExtraArgument(serverAxios(req))))
 }
 
 export const getClientStore = () => {

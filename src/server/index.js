@@ -16,9 +16,10 @@ app.use('/api', proxy('http://47.95.113.63', {
 
 app.get('*', (req, res) => {
 
-  const store = getStore()
-  let promises = []
+  const store = getStore(req)
 
+  let promises = []  // 存储获取数据的
+  // matchedRoutes存储匹配当前路径的路由
   const matchedRoutes = matchRoutes(routes, req.path)
   matchedRoutes.forEach( item => {
     if(item.route.loadData) {

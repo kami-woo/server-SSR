@@ -1,30 +1,24 @@
 import React from 'react'
 import { Route } from 'react-router-dom'
 import Home from '../containers/Home'
-import Enter from '../containers/Home/enter'
+import Translation from '../containers/Translation'
+import App from '../App'
 
-// const Routes = () => {
-//   return (
-//     <div>
-//       <Route path='/' exact component={ Home }></Route>
-//       <Route path='/enter' exact component={ Enter }></Route>
-//     </div>
-//   )
-// }
-
-// export default Routes
-
-export default [
-  {
+export default [{
+  path: '/',
+  component: App,
+  loadData: App.loadData,
+  routes: [{
     path: '/',
     exact: true,
     component: Home,
     key: 'home',
     loadData: Home.loadData
   }, {
-    path: '/enter',
+    path: '/translation',
     exact: true,
-    component: Enter,
-    key: 'enter'
-  }
-]
+    component: Translation,
+    key: 'translation',
+    loadData: Translation.loadData
+  }]
+}]
