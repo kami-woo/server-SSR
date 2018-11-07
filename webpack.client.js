@@ -8,6 +8,19 @@ const clientConfig = {
     path: __dirname + '/public'
   },
   mode: 'development',
+  module: {
+    rules: [{
+      test: /\.css?$/,
+      use: ['style-loader', {
+        loader: 'css-loader',
+        options: {
+          importLoaders: 1,
+          modules: true,
+          localIdentName: '[name]_[local]_[hash:base64:5]'
+        }
+      }]
+    }]
+  }
 }
 
 module.exports = merge(clientConfig, baseConfig)
