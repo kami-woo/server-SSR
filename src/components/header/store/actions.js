@@ -9,7 +9,7 @@ const changeLogin = (data) => {
 
 export const getHeaderInfo = () => {
   return (dispatch, getState, instance) => {
-    return instance.get('isLogin.json?secret=M5s2sPneDE')
+    return instance.get('isLogin.json')
       .then((res) => {
         res = res.data
         if(res.success && res.data) {
@@ -22,7 +22,7 @@ export const getHeaderInfo = () => {
 
 export const login = () => {
   return (dispatch, getState, instance) => {
-    instance.get('login.json?secret=M5s2sPneDE')
+    instance.get('login.json')
       .then((res) => {
         res = res.data
         if(res.success && res.data) {
@@ -35,7 +35,7 @@ export const login = () => {
 
 export const logout = () => {
   return (dispatch, getState, instance) => {
-    instance.get('logout.json?secret=M5s2sPneDE')
+    instance.get('logout.json')
       .then((res) => {
         res = res.data
         if(res.success && res.data) {

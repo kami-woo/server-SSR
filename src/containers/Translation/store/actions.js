@@ -9,7 +9,7 @@ const changeList = (data) => {
 
 export const getTranslationList = () => {
   return (dispatch, getState, instance) => {
-    return instance.get('translations.json?secret=M5s2sPneDE')
+    return instance.get('translations.json')
       .then((res) => {
         res = res.data
         if(res.success && res.data) {

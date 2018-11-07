@@ -10,7 +10,7 @@ export const getInfo = () => {
 
     // const url = server ? 'http://47.95.113.63/ssr/api/news.json?secret=M5s2sPneDE' : '/api/news.json?secret=M5s2sPneDE'
 
-    return instance.get('news.json?secret=M5s2sPneDE')
+    return instance.get('news.json')
       .then((res) => {
         res = res.data
         if(res && res.success) {
